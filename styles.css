@@ -1,0 +1,425 @@
+/* Alapértelmezett stílusok minden elemre: box-sizing biztosítja, hogy a padding és border ne növelje az elem méretét; margin és padding nullázása egységes kiindulási pontot ad */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* A weboldal alapvető szöveg- és háttérstílusa: Arial betűtípus, olvasható sortáv, sötétszürke szöveg, világos háttér */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Képernyőolvasóknak látható, de vizuálisan rejtett tartalom (pl. akadálymentes címkékhez) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* "Skip to content" link akadálymentes navigációhoz; alapértelmezetten rejtett, fókuszáláskor látható */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #003087;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+/* Skip link fókuszáláskor a képernyő tetejére kerül */
+.skip-link:focus {
+    top: 0;
+}
+
+/* Fejléc sötétkék háttérrel, fehér szöveggel, paddinggel a térközért */
+header {
+    background-color: #003087;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+/* Fejléc tartalma középre igazítva, max. 1200px szélességgel */
+.header-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Logó reszponzív méretezése, max. 150px szélességgel */
+.logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Fejléc címsorának mérete és margója */
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Fejléc leíró szövegének mérete és margója */
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Vészhelyzeti kapcsolat kiemelése nagyobb, sárga betűkkel */
+.emergency-contact {
+    margin-top: 1rem;
+}
+
+.emergency-contact strong {
+    font-size: 1.5rem;
+    color: #ffd700;
+}
+
+/* Közösségi média ikonok egységes mérete és térköze */
+.social-links img {
+    width: 30px;
+    height: 30px;
+    margin: 0 0.5rem;
+}
+
+/* Navigációs sáv világos háttérrel, flexbox elrendezéssel a középre igazításhoz */
+nav {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Legördülő menü gombjainak stílusa: kék háttér, fehér szöveg, lekerekített sarkok */
+.dropbtn {
+    background-color: #0059b3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+/* Gomb fókuszáláskor fehér keretet kap */
+.dropbtn:focus {
+    outline: 2px solid #fff;
+}
+
+/* Legördülő menü tartalma alapértelmezetten rejtett, fehér háttérrel, árnyékkal */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+/* Legördülő menü elemeinek listázása stílus nélkül */
+.dropdown-content li {
+    list-style: none;
+}
+
+/* Legördülő menü linkjeinek stílusa: sötétszürke szöveg, padding, sima átmenet */
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+/* Linkek hover és fókusz esetén világosabb háttérszínt kapnak */
+.dropdown-content a:hover, .dropdown-content a:focus {
+    background-color: #ddd;
+}
+
+/* Nyitott legördülő menü megjelenítése, ha aria-expanded="true" */
+[aria-expanded="true"] + .dropdown-content {
+    display: block;
+}
+
+/* Nyelv váltó linkek kék színe, aláhúzás hover/fókusz esetén */
+.language-switcher a {
+    color: #0059b3;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.language-switcher a:hover, .language-switcher a:focus {
+    text-decoration: underline;
+}
+
+/* Kereső űrlap flexbox elrendezéssel, térközzel az elemek között */
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Keresőmező stílusa: szürke keret, lekerekített sarkok */
+.search-form input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Keresőgomb stílusa: kék háttér, fehér szöveg, lekerekített sarkok */
+.search-form button {
+    background-color: #0059b3;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Keresőgomb hover/fókusz esetén sötétebb kékre vált */
+.search-form button:hover, .search-form button:focus {
+    background-color: #003087;
+}
+
+/* Fő tartalom maximális szélessége 1200px, középre igazítva, paddinggel */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Szakaszok közötti margó */
+section {
+    margin-bottom: 2rem;
+}
+
+/* Alcímek stílusa: kék szín, nagyobb betűméret */
+h2 {
+    font-size: 1.8rem;
+    color: #003087;
+    margin-bottom: 1rem;
+}
+
+/* Képcsúszka konténer: középre igazítva, rejtett túlfolyással */
+.slider {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Képek alapértelmezetten rejtve, teljes szélességűek, lekerekített sarkokkal */
+.slider-img {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Aktív kép megjelenítése átlátszósági animációval */
+.slider-img.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Előző/következő gombok stílusa: félig átlátszó fekete háttér, fehér szöveg */
+.slider-prev, .slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 4px;
+}
+
+/* Gombok fókuszáláskor fehér keretet kapnak */
+.slider-prev:focus, .slider-next:focus {
+    outline: 2px solid #fff;
+}
+
+/* Előző gomb bal oldali pozicionálása */
+.slider-prev {
+    left: 10px;
+}
+
+/* Következő gomb jobb oldali pozicionálása */
+.slider-next {
+    right: 10px;
+}
+
+/* Képaláírás középre igazítva, dőlt betűkkel */
+figcaption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 0.5rem;
+    color: #555;
+}
+
+/* Gyorslinkek és lábléc listák behúzása */
+.quick-links ul, .footer-section ul {
+    padding-left: 20px;
+}
+
+/* Listaelemek közötti margó */
+.quick-links li, .footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+/* Hírek és tevékenységek rácsos elrendezése, reszponzív oszlopokkal */
+.news-grid, .activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Hírek és tevékenységek cikkek stílusa: fehér háttér, lekerekített sarkok, árnyék */
+.news-grid article, .activity-grid article {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Cikkek címsorai kék színnel */
+.news-grid h3, .activity-grid h3 {
+    font-size: 1.2rem;
+    color: #003087;
+}
+
+/* Gombok stílusa: kék háttér, fehér szöveg, lekerekített sarkok */
+.btn {
+    display: inline-block;
+    background-color: #0059b3;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+/* Gombok hover/fókusz esetén sötétebb kékre váltanak */
+.btn:hover, .btn:focus {
+    background-color: #003087;
+}
+
+/* Lábléc sötétkék háttérrel, fehér szöveggel, paddinggel */
+footer {
+    background-color: #003087;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+/* Lábléc tartalma rácsos elrendezéssel, max. 1200px szélességgel */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+/* Lábléc alcímeinek stílusa */
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Partnerek szekció középre igazítva, max. 1200px szélességgel */
+.footer-partners {
+    max-width: 1200px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+/* Partner logók flexbox elrendezéssel, reszponzív csomagolással */
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Partner logók max. 100px szélességgel */
+.partner-logos img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Reszponzív stílusok 768px alatti képernyőmérethez */
+@media (max-width: 768px) {
+    /* Kisebb címsor a fejlécben */
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Kisebb leíró szöveg a fejlécben */
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Kisebb logó */
+    .logo {
+        max-width: 100px;
+    }
+
+    /* Fő tartalom kisebb paddinggel */
+    main {
+        padding: 1rem;
+    }
+
+    /* Képcsúszka teljes szélességű */
+    .slider {
+        max-width: 100%;
+    }
+
+    /* Navigáció oszlopos elrendezése, balra igazítva */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Gombok és keresőmező teljes szélességű */
+    .dropbtn, .search-form {
+        width: 100%;
+    }
+
+    /* Legördülő menü statikus pozícióval, teljes szélességű */
+    .dropdown-content {
+        position: static;
+        width: 100%;
+    }
+}
+
+/* Reszponzív stílusok 480px alatti képernyőmérethez */
+@media (max-width: 480px) {
+    /* Kisebb alcímek */
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Képcsúszka gombjainak kisebb mérete */
+    .slider-prev, .slider-next {
+        padding: 0.3rem 0.8rem;
+        font-size: 1.2rem;
+    }
+
+    /* Hírek és tevékenységek egyoszlopos rácsos elrendezése */
+    .news-grid, .activity-grid {
+        grid-template-columns: 1fr;
+    }
+}
